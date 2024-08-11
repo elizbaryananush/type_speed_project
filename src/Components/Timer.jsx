@@ -13,7 +13,7 @@ function Timer({ isActive }) {
     useEffect(() => {
         //sending time in seconds as redux variable
         dispatch(setTime(seconds[activeSecond]))
-    }, [])
+    }, [activeSecond])
 
     useEffect(() => {
         let interval;
@@ -23,7 +23,7 @@ function Timer({ isActive }) {
             interval = setInterval(() => {
                 setSeconds(prevSeconds => {
                     const newSeconds = [...prevSeconds];
-                    newSeconds[activeSecond] = newSeconds[activeSecond] - 1;
+                    // newSeconds[activeSecond] = newSeconds[activeSecond] - 1;
                     return newSeconds;
                 });
             }, 1000);

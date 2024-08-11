@@ -52,6 +52,17 @@ function TypingTextArea({ isActive }) {
             //if there's no imported letters in active word changing the active word
             if (!importedText[currentWordIndex] && currentWordIndex > 0) {
                 e.preventDefault()
+
+                // Remove trailing fake mistakes from the previous word
+                let updatedImportedText = [...importedText];
+                const prevWord = updatedImportedText[currentWordIndex - 1];
+
+                if (prevWord && prevWord.endsWith('*')) {
+                    // Remove fake characters from the end of the previous word
+                    updatedImportedText[currentWordIndex - 1] = prevWord.replace(/\*+$/, '');
+                    dispatch(setImportedText(updatedImportedText));
+                }
+
                 setCurrentWordIndex(currentWordIndex - 1)
             } else {
                 //deleting span elements and letters in importedText
