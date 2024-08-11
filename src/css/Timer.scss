@@ -1,0 +1,17 @@
+.Timer {
+    width: fit-content;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+    .seconds {
+        width: 40px;
+        font-size: 20px;
+        text-align: center;
+    }
+
+    .active {
+        font-size: 34px;
+    }
+}
