@@ -25,5 +25,3 @@ export const quotes = <string[]>[
     
     "as dusk falls upon the village the streets grow quiet and calm with the setting sun casting a golden hue childrens laughter fades as families prepare for their evening meals the scent of delicious food mingles with the cool evening breeze drifting through open windows lanterns light up doorsteps and windows casting a warm glow on the serene streets each home becomes a haven from the growing darkness outside where shadows stretch and stars begin to shine in the sky the moon rises steadily casting its gentle light over the tranquil village the peaceful evening is marked by the comforting sounds of family gatherings and the occasional rustle of leaves in the breeze the sky transitions from vibrant colors to deep blue as the stars emerge and the moon shines brightly above the village the calm and serenity of the night provide a perfect backdrop for rest and reflection as the day comes to an end"
   ];
-  
-  
