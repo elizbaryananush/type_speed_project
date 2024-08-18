@@ -1,45 +1,46 @@
-# Type Speed Project
+# Getting Started with Create React App
 
-## Overview
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-The Type Speed project is a simple React application that tracks typing speed (Words Per Minute, WPM) and mistake count. It uses Redux for state management and provides a basic typing exercise to measure typing proficiency.
+## Available Scripts
 
-## Features
+In the project directory, you can run:
 
-- Typing exercise with real-time feedback
-- Tracks typing speed (WPM)
-- Counts and displays mistakes
-- Uses Redux for state management
+### `npm start`
 
-## Technologies Used
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-- **React**: For building the user interface.
-- **Redux**: For state management.
-- **JavaScript**: For application logic.
-- **CSS/Sass**: For styling.
+The page will reload if you make edits.\
+You will also see any lint errors in the console.
 
-## Installation
+### `npm test`
 
-To get started with this project, follow these steps:
+Launches the test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-1. **Clone the repository:**
+### `npm run build`
 
-```bash
-git clone https://github.com/your-username/type_speed_project.git
-```
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
-2.**Navigate to the project directory:**
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
 
-```bash
-cd type_speed_project
-```
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-3.**Install the dependencies:**
-```bash
-npm i
-```
+### `npm run eject`
 
-4.**Running the application**
-```bash
-npm start
-```
+**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+
+If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+
+You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+
+## Learn More
+
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+
+To learn React, check out the [React documentation](https://reactjs.org/).

@@ -66,4 +66,3 @@ const typingSlice = createSlice({
 // Export the actions and reducer
 export const { setWordsArray, setImportedText, setTime, setWpm, setMistakesCount } = typingSlice.actions;
 export default typingSlice.reducer;
-
