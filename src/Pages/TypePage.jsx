@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
-import TypingTextArea from '../Components/TypingTextArea'
-import Timer from '../Components/Timer'
+import TypingTextArea from '../Components/TypingTextArea.tsx'
+import Timer from '../Components/Timer.tsx'
 import { TbPlayerPause, TbPlayerPlayFilled, TbReload } from "react-icons/tb";
 
 function TypePage() {
@@ -27,7 +27,7 @@ function TypePage() {
         <div className='TypePage'>
             <div className="top">
                 <TbReload onClick={() => window.location.href = '/'} />
-                <Timer isActive={isActive} setIsActive={setIsActive} />
+                <Timer isActive={isActive} />
                 {isActive ? <TbPlayerPause onClick={handlePause} /> :
                     <TbPlayerPlayFilled onClick={handlePause} />}
             </div>

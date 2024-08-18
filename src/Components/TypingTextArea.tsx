@@ -1,15 +1,20 @@
-import React, { useEffect, useRef, useState } from 'react'
+import React, { ChangeEvent, useEffect, useRef, useState, } from 'react'
 import { quotes } from '../dbs/quotes'
 import '../css/TypingTextArea.scss'
 import { useDispatch, useSelector } from 'react-redux';
 import { setImportedText, setWpm, setWordsArray, setMistakesCount } from '../redux/typingSlice';
+import { RootState } from '../redux/store';
 
-function TypingTextArea({ isActive }) {
+interface TypingTextAreaProps {
+    isActive: boolean
+}
+
+const TypingTextArea: React.FC<TypingTextAreaProps> = ({ isActive }) => {
     const dispatch = useDispatch()
-    const { importedText, time, wordsArray } = useSelector(state => state.typing)
-    const [currentWordIndex, setCurrentWordIndex] = useState(0);// active word index
-    const [result, setResult] = useState([]) // results as span html elements
-    const inputRefs = useRef([]);
+    const { importedText, time, wordsArray } = useSelector((state: RootState) => state.typing);
+    const [currentWordIndex, setCurrentWordIndex] = useState<number>(0);// active word index
+    const [result, setResult] = useState<JSX.Element[][]>([]) // results as span html elements
+    const inputRefs = useRef<(HTMLTextAreaElement | null)[]>([]);
 
     //getting the sentence/quote
     useEffect(() => {
@@ -23,7 +28,7 @@ function TypingTextArea({ isActive }) {
     }, []);
 
     //handling all keydowns
-    const handleKeyDown = (e) => {
+    const handleKeyDown = (e: React.KeyboardEvent<HTMLTextAreaElement>) => {
 
         //handling space key
         if (e.key === ' ') {
@@ -87,7 +92,7 @@ function TypingTextArea({ isActive }) {
     };
 
     //handling every letter
-    const handleChange = (index, e) => {
+    const handleChange = (index: number, e: ChangeEvent<HTMLTextAreaElement>) => {
 
         const newImportedText = [...importedText];
         newImportedText[index] = e.target.value;
@@ -100,7 +105,7 @@ function TypingTextArea({ isActive }) {
 
         newArray[index].push(
             <span
-                key={[index] + [letterIndex]}
+                key={`$[index] + $[letterIndex]`}
                 spellCheck='false'
                 className={wordsArray[index][letterIndex] === text[letterIndex] ? 'correct' : 'wrong'}>{wordsArray[index][letterIndex]}
             </span>
@@ -146,9 +151,9 @@ function TypingTextArea({ isActive }) {
                 </div>
             }
 
-            {wordsArray.map((item, index) => (
+            {wordsArray.map((item: string, index: number) => (
                 <div key={index} className="word">
-                    <div readOnly className='quoteText'>
+                    <div className='quoteText'>
                         {item}
                     </div>
                     <textarea
@@ -164,7 +169,7 @@ function TypingTextArea({ isActive }) {
                     ></textarea>
                     <div className="importText">
                         {
-                            result && result[index] && result[index].map((item, index) => {
+                            result && result[index] && result[index].map((item: any, index: number) => {
                                 return item
                             })
                         }

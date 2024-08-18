@@ -1,11 +1,10 @@
-import React, { useEffect } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
-import { setWpm } from '../redux/typingSlice'
-import { useNavigate } from 'react-router'
+import React from 'react'
+import { useSelector } from 'react-redux'
 import { TbReload } from "react-icons/tb";
+import { RootState } from '../redux/store';
 
 function ResultsPage() {
-    const { wpm, mistakesCount } = useSelector(state => state.typing) //words in per minute and mistakes variables from redux typing state
+    const { wpm, mistakesCount } = useSelector((state: RootState) => state.typing) //words in per minute and mistakes variables from redux typing state
 
     const handleReload = () => {
         window.location.href = '/'
